@@ -12,22 +12,24 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
     }
 
 
-//    override fun onBackPressed() {
-//        //super.onBackPressed()
-//        if (System.currentTimeMillis() > backKeyPressedTime + 2000) {
-//            backKeyPressedTime = System.currentTimeMillis()
-//            Toast.makeText(this, "뒤로가기 버튼을 한번 더 누르시면 종료됩니다.", Toast.LENGTH_SHORT).show()
-//            return
-//        }
-//        // 2초 이내에 뒤로가기 버튼을 한번 더 클릭시 finish() / 즉 ,앱 종료
-//        if(System.currentTimeMillis() <= backKeyPressedTime + 2000) {
-//            val intent1 = Intent(this, SignInActivity::class.java)
-//            finishAffinity()
-//            startActivity(intent1)
-//
-//        }
-//    }
+    override fun onBackPressed() {
+        //super.onBackPressed()
+        if (System.currentTimeMillis() > backKeyPressedTime + 2000) {
+            backKeyPressedTime = System.currentTimeMillis()
+            Toast.makeText(this, "뒤로가기 버튼을 한번 더 누르시면 로그인 화면으로 이동합니다..", Toast.LENGTH_SHORT).show()
+            return
+        }
+        // 2초 이내에 뒤로가기 버튼을 한번 더 클릭시 finish() / 즉 ,앱 종료
+        if(System.currentTimeMillis() <= backKeyPressedTime + 2000) {
+            val intent1 = Intent(this, SignInActivity::class.java)
+            finishAffinity()
+            startActivity(intent1)
+
+        }
+    }
 }
